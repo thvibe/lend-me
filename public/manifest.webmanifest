@@ -1,0 +1,13 @@
+{
+  "name": "Lend Me",
+  "short_name": "Lend Me",
+  "description": "Borrow what you need, lend what you don't.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a1326",
+  "theme_color": "#2749d9",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any maskable" }
+  ]
+}

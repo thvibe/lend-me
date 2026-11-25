@@ -1,0 +1,132 @@
+/* ============================================================================
+   Screen-specific styles (Home, Search, Detail, Create, Messages, Agreement,
+   Profile). Primitives live in app.css.
+   ========================================================================== */
+
+/* ---- shared helpers ----------------------------------------------------- */
+.min0 { min-width: 0; }
+.full { width: 100%; }
+.stack.gap-0 { gap: 0; }
+
+.thumb {
+  width: 64px; height: 64px; flex: none;
+  aspect-ratio: auto; border-radius: var(--r-md);
+}
+.thumb .tile__emoji { font-size: 2rem; }
+.thumb--sm { width: 52px; height: 52px; }
+.thumb--sm .tile__emoji { font-size: 1.6rem; }
+
+.success-pane {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: var(--s-4); padding: var(--s-2) 0;
+}
+.success-ring {
+  width: 76px; height: 76px; border-radius: 50%;
+  background: var(--success-soft); color: var(--success-soft-text);
+  display: grid; place-items: center;
+}
+
+/* ---- Home --------------------------------------------------------------- */
+.loc-btn {
+  display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+  background: none; border: 0; cursor: pointer; color: var(--text); padding: 2px 0;
+}
+.searchbar--button { width: 100%; cursor: pointer; text-align: left; text-decoration: none; }
+
+.cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-3); }
+.cat-card {
+  display: flex; flex-direction: column; align-items: center; gap: 7px;
+  background: none; border: 0; cursor: pointer; color: var(--text);
+  font-size: var(--t-caption); font-weight: var(--fw-semibold);
+  text-align: center; line-height: 1.2;
+}
+.cat-card__icon {
+  width: 58px; height: 58px; border-radius: var(--r-md); color: #fff;
+  display: grid; place-items: center; box-shadow: var(--shadow-1);
+  background: linear-gradient(145deg, hsl(var(--hue) 72% 54%), hsl(calc(var(--hue) + 20) 58% 40%));
+}
+
+.cards-row .listing-card { width: 168px; }
+
+.promo {
+  display: flex; align-items: center; gap: var(--s-3);
+  background: var(--brand-band); color: var(--brand-band-contrast);
+  border-radius: var(--r-lg); padding: var(--s-4); text-decoration: none;
+}
+.promo__icon {
+  width: 46px; height: 46px; border-radius: var(--r-md); flex: none;
+  background: rgba(255, 255, 255, 0.16); display: grid; place-items: center;
+}
+.promo__title { font-weight: var(--fw-bold); }
+.promo__sub { font-size: var(--t-sm); color: var(--brand-band-muted); }
+
+/* ---- Search ------------------------------------------------------------- */
+.result-head { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); }
+
+/* ---- Listing detail ----------------------------------------------------- */
+.detail-gallery { aspect-ratio: 1 / 1; border-radius: 0; }
+.detail-body { padding: var(--s-4); }
+.detail-title { font-size: var(--t-xl); font-weight: var(--fw-extrabold); line-height: 1.2; }
+.detail-desc { color: var(--text-muted); line-height: 1.55; }
+.verified-ic { color: var(--primary); }
+
+.lender-row { display: flex; align-items: center; gap: var(--s-3); text-decoration: none; color: inherit; }
+
+.spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+.spec {
+  display: flex; align-items: flex-start; gap: var(--s-2);
+  padding: var(--s-3); border: 1px solid var(--border);
+  border-radius: var(--r-md); background: var(--surface);
+}
+.spec__icon { color: var(--primary); flex: none; margin-top: 1px; }
+
+/* ---- Create a post ------------------------------------------------------ */
+.create-body { padding: var(--s-4); }
+.step-label { color: var(--text-muted); font-size: var(--t-sm); }
+
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); }
+.photo { position: relative; }
+.photo__cover {
+  position: absolute; left: 6px; top: 6px;
+  background: var(--primary); color: var(--primary-contrast);
+  font-size: 10px; font-weight: var(--fw-bold); padding: 2px 8px; border-radius: var(--r-pill);
+}
+.photo__rm { position: absolute; right: 6px; top: 6px; width: 30px; height: 30px; }
+.photo-add {
+  aspect-ratio: 4 / 3; border: 1.5px dashed var(--border-strong);
+  border-radius: var(--r-md); background: var(--surface-2);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; color: var(--text-muted); cursor: pointer;
+}
+
+/* ---- Messages ----------------------------------------------------------- */
+.is-unread { color: var(--text); font-weight: var(--fw-semibold); }
+.unread-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); flex: none; }
+
+/* ---- Chat thread -------------------------------------------------------- */
+.thread-context {
+  position: sticky; top: var(--header-h); z-index: 20;
+  display: flex; align-items: center; gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  background: var(--surface); border-bottom: 1px solid var(--border);
+}
+
+/* ---- Agreement ---------------------------------------------------------- */
+.agreement-body { padding: var(--s-4); }
+
+/* ---- Profile ------------------------------------------------------------ */
+.profile-head { display: flex; flex-direction: column; align-items: center; gap: var(--s-3); text-align: center; }
+.profile-head__id { align-items: center; }
+.profile-head h2 { font-size: var(--t-xl); }
+
+.stats {
+  display: flex; width: 100%;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); overflow: hidden;
+}
+.stat { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: var(--s-3); }
+.stat + .stat { border-left: 1px solid var(--border); }
+.stat__n { font-size: var(--t-lg); font-weight: var(--fw-extrabold); }
+.stat__l { font-size: var(--t-caption); color: var(--text-subtle); }
+
+.borrow-card { display: flex; flex-direction: column; gap: var(--s-3); }

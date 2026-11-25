@@ -1,0 +1,195 @@
+/* ============================================================================
+   Lend Me — Design tokens
+   Blue-first (royal + navy). Light + dark. WCAG 2.2 AA verified.
+   Run `npm run check:contrast` after changing any color pair below.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---- Brand anchors (raw) ------------------------------------------------ */
+  --royal: #2749d9;       /* primary royal blue */
+  --royal-strong: #1e3fc4;
+  --royal-press: #1a37ac;
+  --navy: #0e1d3d;        /* deep brand navy */
+  --navy-deep: #0a1326;
+
+  /* ---- Surfaces ----------------------------------------------------------- */
+  --bg: #f4f7fd;          /* app background (soft blue-tinted white) */
+  --surface: #ffffff;     /* cards, sheets */
+  --surface-2: #eef2fb;   /* subtle fills, inputs */
+  --surface-3: #e3e9f6;   /* chips, pressed */
+  --border: #d3dcee;      /* hairlines */
+  --border-strong: #6c82ac;
+
+  /* ---- Text --------------------------------------------------------------- */
+  --text: #0e1a33;        /* primary ink (near-navy) */
+  --text-muted: #45557b;  /* secondary */
+  --text-subtle: #566589; /* tertiary / captions */
+  --text-on-brand: #ffffff;
+
+  /* ---- Primary (actions, links) ------------------------------------------ */
+  --primary: var(--royal);
+  --primary-hover: var(--royal-strong);
+  --primary-press: var(--royal-press);
+  --primary-contrast: #ffffff;
+  --primary-soft: #e6ecff;            /* tinted selected background */
+  --primary-soft-text: #1b38b8;       /* text/icon on --primary-soft */
+
+  /* ---- Deep brand band (headers, hero) ----------------------------------- */
+  --brand-band: var(--navy);
+  --brand-band-contrast: #ffffff;
+  --brand-band-muted: #c3cfe8;
+
+  /* ---- Status ------------------------------------------------------------- */
+  --success: #1b7a43; --on-success: #ffffff; --success-soft: #dcf3e5; --success-soft-text: #11633a;
+  --warning: #8a5300; --on-warning: #ffffff; --warning-soft: #fbeccd; --warning-soft-text: #6b4100;
+  --danger:  #c22a2a; --on-danger:  #ffffff; --danger-soft:  #fbe0e0; --danger-soft-text:  #a31f1f;
+  --info-soft: var(--primary-soft); --info-soft-text: var(--primary-soft-text);
+
+  /* ---- Accents for meta ---------------------------------------------------- */
+  --deposit: var(--primary-soft-text);       /* deposit badge text */
+  --deposit-soft: var(--primary-soft);
+  --rating-star: #d98a00;                     /* decorative; always paired with a number */
+
+  /* ---- Focus -------------------------------------------------------------- */
+  --focus-ring: #1b40d8;
+  --focus-offset: var(--bg);
+
+  /* ---- Elevation ---------------------------------------------------------- */
+  --shadow-1: 0 1px 2px rgba(14, 26, 51, 0.06), 0 1px 3px rgba(14, 26, 51, 0.08);
+  --shadow-2: 0 4px 10px rgba(14, 26, 51, 0.08), 0 2px 4px rgba(14, 26, 51, 0.06);
+  --shadow-3: 0 12px 28px rgba(10, 19, 38, 0.16), 0 4px 10px rgba(10, 19, 38, 0.1);
+
+  /* ---- Radius ------------------------------------------------------------- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ---- Spacing (4pt base) ------------------------------------------------- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 20px; --s-6: 24px; --s-7: 32px; --s-8: 40px; --s-9: 56px;
+
+  /* ---- Type --------------------------------------------------------------- */
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-sans);
+
+  --t-caption: 0.8125rem;   /* 13 */
+  --t-sm: 0.875rem;         /* 14 */
+  --t-base: 1rem;           /* 16 */
+  --t-md: 1.0625rem;        /* 17 */
+  --t-lg: 1.25rem;          /* 20 */
+  --t-xl: 1.5rem;           /* 24 */
+  --t-2xl: 1.875rem;        /* 30 */
+  --t-3xl: 2.25rem;         /* 36 */
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-normal: 1.5;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* ---- Layout ------------------------------------------------------------- */
+  --app-max: 460px;         /* phone-width content column */
+  --tabbar-h: 64px;
+  --header-h: 56px;
+  --tap-min: 44px;          /* generous target size (WCAG 2.5.8 AA is 24px) */
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* ---- Dark: follow system unless a light choice is pinned ------------------ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --bg: #0a1326;
+    --surface: #111f3a;
+    --surface-2: #17264a;
+    --surface-3: #1e3058;
+    --border: #28395e;
+    --border-strong: #5f74ab;
+
+    --text: #eaf0fb;
+    --text-muted: #aebbd7;
+    --text-subtle: #99a8ca;
+    --text-on-brand: #ffffff;
+
+    --primary: #7f9dff;
+    --primary-hover: #99b0ff;
+    --primary-press: #6b8bf2;
+    --primary-contrast: #06122b;
+    --primary-soft: #1c2b52;
+    --primary-soft-text: #b3c5ff;
+
+    --brand-band: #0c1733;
+    --brand-band-contrast: #eaf0fb;
+    --brand-band-muted: #9fb0d6;
+
+    --success: #4fcb86; --on-success: #06210f; --success-soft: #11321f; --success-soft-text: #74dd9f;
+    --warning: #ebb45a; --on-warning: #241700; --warning-soft: #352713; --warning-soft-text: #f0c074;
+    --danger:  #ff7a7a; --on-danger:  #2a0606; --danger-soft:  #3a1a1c; --danger-soft-text:  #ff9b9b;
+
+    --deposit: var(--primary-soft-text);
+    --deposit-soft: var(--primary-soft);
+    --rating-star: #f0b53d;
+
+    --focus-ring: #9db4ff;
+    --focus-offset: var(--bg);
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.45);
+    --shadow-3: 0 16px 36px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* ---- Dark: explicitly pinned -------------------------------------------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0a1326;
+  --surface: #111f3a;
+  --surface-2: #17264a;
+  --surface-3: #1e3058;
+  --border: #28395e;
+  --border-strong: #5f74ab;
+
+  --text: #eaf0fb;
+  --text-muted: #aebbd7;
+  --text-subtle: #99a8ca;
+  --text-on-brand: #ffffff;
+
+  --primary: #7f9dff;
+  --primary-hover: #99b0ff;
+  --primary-press: #6b8bf2;
+  --primary-contrast: #06122b;
+  --primary-soft: #1c2b52;
+  --primary-soft-text: #b3c5ff;
+
+  --brand-band: #0c1733;
+  --brand-band-contrast: #eaf0fb;
+  --brand-band-muted: #9fb0d6;
+
+  --success: #4fcb86; --on-success: #06210f; --success-soft: #11321f; --success-soft-text: #74dd9f;
+  --warning: #ebb45a; --on-warning: #241700; --warning-soft: #352713; --warning-soft-text: #f0c074;
+  --danger:  #ff7a7a; --on-danger:  #2a0606; --danger-soft:  #3a1a1c; --danger-soft-text:  #ff9b9b;
+
+  --deposit: var(--primary-soft-text);
+  --deposit-soft: var(--primary-soft);
+  --rating-star: #f0b53d;
+
+  --focus-ring: #9db4ff;
+  --focus-offset: var(--bg);
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 16px 36px rgba(0, 0, 0, 0.55);
+}
